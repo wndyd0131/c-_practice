@@ -1,0 +1,2 @@
+- c++에서는 bool타입이 추가됨
+    - 매크로 함수로 #define TRUE 1를 사용했지만, 이제 true와 false가 있음

@@ -1,0 +1,16 @@
+1.
+const int *ptr = &val;
+    - int *를 const해서 가리키는 값을 바꾸지 못하게 함
+int * const ptr = &val;
+    - ptr을 const해서 새로운 주소를 대입하지 못하게 함
+const int * const ptr = &val;
+    - 가리키는 값과 주소값을 바꾸지 못하게 함
+
+2. 프로그램은 메모리 공간을 할당받는데, 데이터, 스택, 힙 영억으로 나뉨
+    - 데이터: 전역변수 저장
+    - 스택: 지역변수 및 매개변수 저장
+    - 힙: 동적할당 (malloc & free)
+
+3. call by value & call by reference
+    - call by value: 값에 의한 호출
+    - call by reference: 메모리 주소 참조에 의한 호출

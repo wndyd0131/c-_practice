@@ -1,0 +1,21 @@
+포인터:
+int *ptr = &num1; 
+    - 이미 선언된 num1에 &가 붙어 주소값 반환
+참조자 (별칭):
+int &num2 = num1;
+    - 새로 선언한 num2에 &가 붙어 num1의 참조자로서 선언됨 (같은 주소를 가리키는 변수들이 됨)
+        - 즉, num2의 값을 바꾸면 num1의 값도 바뀜
+
+
+call by reference와 call by value의 구분
+    - call by reference란: 주소 값을 전달받아서, 함수 외부에 선언된 변수에 접근하는 형태의 함수호출
+        int * Func(int *ptr){ // call by reference
+            *ptr = 20;
+            return ptr;
+        }
+        - 주소값이 참조의 도구로 사용됨
+
+        int * Func(int *ptr){ // call by value
+            return ptr+1;
+        }
+        - 참조한 게 아니라, 주소값만 바꾼 거기 때문에 call by value임
