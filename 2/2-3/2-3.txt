@@ -1,3 +1,5 @@
+[참조자]
+
 포인터:
 int *ptr = &num1; 
     - 이미 선언된 num1에 &가 붙어 주소값 반환
@@ -19,3 +21,21 @@ call by reference와 call by value의 구분
             return ptr+1;
         }
         - 참조한 게 아니라, 주소값만 바꾼 거기 때문에 call by value임
+
+참조자 call by reference와 일반 call by value의 구분
+    - Func(num);
+        - C언와 달리, 이를 통해서 Func의 매개변수가 참조자인지 일반변수인지 알 수 없어서, num이 결과적으로 바뀔지 안 바뀔지를 원형을 봐야만 알 수 있음
+            - 이를 해결하기 위해, 원형을 void Func(const int &num);과 같이 const를 붙여주면 이 값은 변경되지 않는다는 것을 통해 쉽게 확인 가능
+
+참조자 반환형
+    - int& Func(int &ref){
+        return ref;
+    }
+        - 받는 값의 자료형에 따라 다름:
+            - int& num1 = Func(num0); // ref와 주소가 같음
+            - int num2 = Func(num0); // ref의 값만 받음
+            (int&가 int의 superset이라 생각하면 편할 것 같다)
+
+const int& ref = 30;
+    -과 같이 상수를 참조할 수도 있음
+        - 원리는 30이라는 리터럴이 임시변수에 할당되고, 그 임시변수가 참조되는 원리
