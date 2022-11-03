@@ -16,6 +16,6 @@ class constTest{
         return num;
     }
     void ShowNum() const{
-        cout<<GetNum()<<endl;
+        cout<<GetNum()<<endl; // GetNum()이 const함수가 아니라 오류
     }
 }
